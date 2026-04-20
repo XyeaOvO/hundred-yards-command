@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hundred Yards Ops">
+  <rect width="64" height="64" rx="12" fill="#1f2318" />
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#7f7045" opacity="0.28" />
+  <path d="M14 42h36" stroke="#f4eddc" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M20 20v24M32 16v28M44 20v24" stroke="#d2a257" stroke-width="3" stroke-linecap="round" />
+  <circle cx="20" cy="20" r="5" fill="#7da5ca" />
+  <circle cx="44" cy="20" r="5" fill="#c96c57" />
+  <path d="M25 24l14-2" stroke="#f4eddc" stroke-width="2.5" stroke-linecap="round" />
+</svg>

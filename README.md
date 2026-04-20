@@ -33,26 +33,97 @@
 └── docs/research       # 已收集的规则资料
 ```
 
-## 3. 快速启动
+## 3. 环境要求
+
+- Node.js `>= 20`
+- npm `>= 10`
+- 建议在 Linux / macOS / WSL 环境下运行
+
+可先检查版本：
+
+```bash
+node -v
+npm -v
+```
+
+## 4. 安装依赖
 
 ```bash
 npm install
+```
+
+## 5. 开发环境运行
+
+```bash
 npm run dev
 ```
 
-默认：
+该命令会同时启动：
 
 - 前端：`http://localhost:5173`
 - 后端：`http://localhost:3001`
 
-## 4. 构建与测试
+浏览器打开前端地址即可开始演示。
+
+如果你想分开启动，也可以分别执行：
+
+```bash
+npm run dev:server
+npm run dev:web
+```
+
+## 6. 生产构建与预览
+
+先构建：
 
 ```bash
 npm run build
+```
+
+构建产物位置：
+
+- 后端：`dist/server`
+- 前端：`dist/web`
+
+如果要本地预览前端构建结果：
+
+```bash
+npm run preview
+```
+
+## 7. 测试
+
+```bash
 npm test
 ```
 
-## 5. 当前原型能力
+## 8. 常见问题
+
+### 端口占用
+
+默认端口：
+
+- 前端 `5173`
+- 后端 `3001`
+
+如果 `3001` 被占用，可以临时改后端端口：
+
+```bash
+PORT=3002 npm run dev:server
+```
+
+如果后端端口改了，前端开发环境也要同步指定 API 地址：
+
+```bash
+VITE_API_BASE_URL=http://localhost:3002/api npm run dev:web
+```
+
+### 页面打不开或接口报错
+
+先确认两个服务都启动成功，再访问前端页面。  
+本项目在开发环境下已配置 Vite 代理，正常情况下不需要手工处理 CORS。
+
+## 9. 当前原型能力
 
 - 载入示例战场
 - 创建对局
@@ -63,7 +134,7 @@ npm test
 - 回合推进与事件日志
 - 关键地域控制进度显示
 
-## 6. 主要文档
+## 10. 主要文档
 
 - [初期汇报总览](./docs/00-initial-report.md)
 - [项目章程](./docs/01-project-charter.md)
@@ -74,9 +145,8 @@ npm test
 - [测试计划](./docs/06-test-plan.md)
 - [风险登记册](./docs/07-risk-register.md)
 
-## 7. 规则边界
+## 11. 规则边界
 
 - 只使用公开资料中的机制思想进行抽象
 - 不复制完整商业任务文本、卡表或地图包
 - 当前实现为课程原型的最小可演示版本
-
